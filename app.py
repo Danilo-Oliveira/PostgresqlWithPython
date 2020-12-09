@@ -19,14 +19,12 @@ def conexao():
     
     
 #***************************************************************************#
-# Classe Aluno faz a conexao com as colunas no SQL Server. ( Student Class Connects to Columns in SQL Server )
 class Users():
     def __init__(self, nome, email):
         self.nomeUser = nome
         self.emailUser = email
         
 #***************************************************************************#
-# Seleciona todas as colunas. ( Select all columns )
     def selecaoEmail(self):
         con = conexao()
         cursor = con.cursor()
@@ -39,7 +37,6 @@ class Users():
  
        
 #***************************************************************************#
-# inserindo dados informados. ( entering informed data )
     def InserirAluno(self):
         con = conexao()
         cursor = con.cursor()
@@ -48,7 +45,6 @@ class Users():
         con.close()
         
 #***************************************************************************#
-# Alterando dados ou "UPDATE" ( Changing data )
     def AlterarInformacao(self):
         con = conexao()
         cursor = con.cursor()
@@ -65,7 +61,6 @@ class Users():
         con.close()
         
 #***************************************************************************#
-# Deletando os dados do aluno escolhido. ( Deleting the data of the chosen student )
     def DeletarInformacao(self):
         con = conexao()
         cursor = con.cursor() 
@@ -75,7 +70,6 @@ class Users():
         
 
 #***************************************************************************#
-# Seleciona apenas o nome e o email na tabela t_alunos no SQL Server. ( Selects only the name and email in the table t_alunos in SQL Server )
 def selecaoTudo():
     con = conexao()
     cursor = con.cursor()
@@ -91,7 +85,6 @@ def selecaoTudo():
 
 #                                 Python                                    #
 
-# Adiciona o Titulo. ( Title )
 def titulo():
     centro = 'Faisp - Faculdade interativa'
     print('===' * 35)
@@ -99,12 +92,10 @@ def titulo():
     print('===' * 35)
     
 #***************************************************************************#
-# Adiciona a linha ( Row )
 def linha():
     print('---' * 35)
 
 #***************************************************************************#
-# Variaveis ( Variables )
 def tela(opcao):
     print("Aguarde...")
     time.sleep(0.8)
@@ -140,9 +131,10 @@ def tela(opcao):
             linha()
         else:
             print("erro")
+            
+            
 #***************************************************************************#
 opcao = 0
-#op = 0
 titulo()
 while opcao != 6:
     print('''[ 1 ] incluir um Aluno(a).
