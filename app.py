@@ -1,9 +1,7 @@
 import psycopg2
 import time
+import re
 
-
-global emailAtual
-global nomeAtual
 #***************************************************************************#
 
 #                                 Postgresql                                 #
@@ -80,10 +78,12 @@ def selecaoTudo():
     con.close()
 
 
-def nomeA(n, e):
+#***************************************************************************#
+def verifcadorTabela(e):
     con = conexao()
     cursor = con.cursor()
-    exeSQL = f"select nome, email from users where nome = '{n}' and email = '{e}'"
+    exeSQL = f"select nome, email from users where email = '{e}'"
+    print(exeSQL)
     cursor.execute(exeSQL)
     result = cursor.fetchall()
     try:
@@ -92,14 +92,42 @@ def nomeA(n, e):
             linha()
             for row in result:
                 print(row[0], ' | ', row[1])
+                
+            return True
     except:
             linha()
             print("O usuario não está cadastrado. Por favor cadastra-se")
             linha()
+            
+            return False
         
     con.commit()
     con.close
  
+
+#***************************************************************************#
+regex = '^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$'
+def validadorNomeEmail(validadorNome, validadorEmail): 
+
+    regex_name = re.compile(r'[A-Z][a-z].* [A-Z][a-z].*', 
+            re.IGNORECASE) 
+
+    res = regex_name.search(validadorNome)
+    
+    if res:
+        return True
+        
+    else:
+        linha()
+        print("Seu nome está inválido")
+ 
+    if(re.search(regex,validadorEmail)):
+        return True
+        
+    else:
+        linha()
+        print("Seu email está inválido")
+
 
 #***************************************************************************#
 
@@ -124,7 +152,8 @@ def tela(opcao):
         resposta = 'S'
         nomeC = str(input("Informe o seu Nome Completo: ")).strip().capitalize()
         emailC = input("Digite seu email: ").strip()
-        if len(nomeC) > 2 and len(emailC) > 2 and "@" in emailC:
+        validador = validadorNomeEmail(nomeC, emailC)
+        if len(nomeC) > 2 and len(emailC) > 2 and validador == True:
             user = Users(nomeC, emailC)
             user.InserirAluno()
             print("Aguarde...")
@@ -140,11 +169,13 @@ def tela(opcao):
     if opcao == '2':
         emailAtual = input("Digite o seu E-mail atual: ")
         nomeAtual = str(input("Digite o seu Nome atual: "))
-        ver = nomeA(nomeAtual, emailAtual)
+        ver = verifcadorTabela(emailAtual)
+        linha()
         mudar = str(input("Gostaria de mudar o seu cadastro (s/n)? ")).strip().upper()[0]
         while mudar not in 'SN':
             mudar = str(input('Dados Inválidos. Por favor, informe com S ou N: ')).strip().upper()[0]
-        if mudar == 'S':
+        if mudar == 'S' and ver == True:
+                
             print('Fazendo Login')
             print('Aguarde...')
             time.sleep(2)
@@ -158,6 +189,7 @@ def tela(opcao):
             op = int(input('Qual e a Opçâo: '))
             print('Processando ...')
             time.sleep(0.6)
+            
             if op == 1:
                 emailAtual = input("Digite o seu E-mail para identificá-lo: ")
                 nomeNovo = str(input("Digite o seu novo nome: "))
