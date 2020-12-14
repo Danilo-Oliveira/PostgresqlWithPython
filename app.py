@@ -29,7 +29,7 @@ class Users():
     def __init__(self, nome, email):
         self.nomeUser = nome
         self.emailUser = email
-
+        
         
 #***************************************************************************#
     def AlterarInformacao(self, emailAtual):
@@ -45,6 +45,15 @@ class Users():
         cursor.execute(exeSQL)
         con.commit()
         con.close()
+        
+
+#***************************************************************************#
+def createTable():
+    con = conexao()
+    cursor = con.cursor()
+    cursor.execute("create table users (id serial primary key, nome varchar(50), email varchar(50))")
+    con.commit()
+    con.close() 
  
         
 #***************************************************************************#
@@ -54,6 +63,20 @@ def InserirAluno(novoUser, novoEmail):
     cursor.execute(f"insert into users (nome, email) values ('{novoUser}', '{novoEmail}')")
     con.commit()
     con.close()   
+
+
+#***************************************************************************#
+def AlterarEmail(emailNovo, emailAtual):
+    con = conexao()
+    cursor = con.cursor()
+    exeSQL = "update users set "
+    if (emailNovo != ''):
+        exeSQL += f"email = '{emailNovo}' "
+    exeSQL = exeSQL[:-2]
+    exeSQL += f"' WHERE email = '{emailAtual}'"
+    cursor.execute(exeSQL)
+    con.commit()
+    con.close()
     
   
 #***************************************************************************#
@@ -111,7 +134,6 @@ def verifcadorEmail(e):
     con = conexao()
     cursor = con.cursor()
     exeSQL = f"select nome, email from users where email = '{e}'"
-    print(exeSQL)
     cursor.execute(exeSQL)
     result = cursor.fetchall()
     result.append("")
@@ -257,8 +279,7 @@ def tela(opcao):
                     emailNovo = str(input("\033[33mDigite o seu novo email\033[m: ")).strip()
                     validador = validadorNomeEmail(emailNovo, emailAtual)
                     if len(emailNovo) > 2 and len(emailAtual) > 2 and validador == True:
-                        user = Users(emailNovo, emailAtual)
-                        user.AlterarInformacao(emailAtual)
+                        AlterarEmail(emailNovo, emailAtual)
                         linha()
                         print("\033[32mE-mail Alterado com sucesso\033[m")
                         linha()
@@ -283,9 +304,19 @@ def tela(opcao):
             
 #***************************************************************************#
 opcao = 0
+try:
+    createTable()
+    print('\033[32mCriamos uma tabela com o Nome "Users" e as colunas!!\n\033[m')
+    selecaoTudo()
+    print("")
+except psycopg2.errors.DuplicateTable:
+    pass
+    
 titulo()
+
 while opcao != 6:
-    print('''[ 1 ] incluir um Aluno(a).
+    print('''
+[ 1 ] incluir um Aluno(a).
 [ 2 ] Editar Aluno.
 [ 3 ] Excluir Aluno.
 [ 4 ] Listar E-mail Cadastrado.
@@ -301,7 +332,6 @@ while opcao != 6:
         if opcao == '1':
             tela(opcao)
             titulo()
-            
 
         
     # Opção "2"
@@ -324,7 +354,7 @@ while opcao != 6:
                 if res == 'S':
                     linha()
                     excluirUser = deleteUser(emailExcluir)
-                    print("\033[36mProcessando Todos os Dados\033[m")
+                    print("\033[36mProcessando Todos os Dados\n\033[m")
                     time.sleep(2)
                     print("\033[32mUsuario excluido com sucesso\033[m")
                 else:
@@ -362,4 +392,3 @@ while opcao != 6:
         linha()
 
 print('\033[35mFim do Programa! Obrigado!!\033[m')
-        
