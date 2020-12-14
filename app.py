@@ -1,5 +1,6 @@
 # Dependencias 
 # pip3 install psycopg2
+# pip3 install pandas   
 # pip3 install tabulate
 # pip3 install validate-email
 
@@ -323,6 +324,8 @@ while opcao != 6:
                 if res == 'S':
                     linha()
                     excluirUser = deleteUser(emailExcluir)
+                    print("\033[36mProcessando Todos os Dados\033[m")
+                    time.sleep(2)
                     print("\033[32mUsuario excluido com sucesso\033[m")
                 else:
                     linha()
@@ -336,6 +339,8 @@ while opcao != 6:
     # Opção "4"
         elif opcao == '4':
             selecionarPorEmail = input("\033[33mInforme o seu E-mail\033[m: ").strip()
+            print("\033[36mProcessando Todos os Dados\033[m")
+            time.sleep(2)
             user = verifcadorEmail(selecionarPorEmail)
             print("")
     # Opção "5"
