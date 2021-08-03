@@ -18,7 +18,7 @@
 
 ---
 
-### Sobre a questão de versão, está funcionando no python ( 3.8.5 até 3.9.5 ) e o postgresql ( 12 e 13 ).
+### Sobre a questão da versão testada, está funcionando no python ( 3.9.5 ) e o postgresql ( 13 ).
 
 ---
 
