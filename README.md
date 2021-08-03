@@ -22,7 +22,7 @@
 
 ---
 
-### Após as instalações faça um clone do repositório e abra os arquivos na sua idle preferida, mas segue o link abaixo caso queira o vscode.
+### Após as instalações faça um clone do repositório e abra os arquivos no seu editor de texto, abaixo tem um link  do vscode.
 
 ### Visual Studio
 
@@ -32,31 +32,32 @@
 
 ### No final teremos algo como assim.
 
-![alt text](https://github.com/Danilo-Oliveira/PostgresqlWithPython/blob/master/imagens/tela-inicial.png)
+![https://github.com/Danilo-Oliveira/PostgresqlWithPython/blob/master/imagens/tela-inicial.png](https://github.com/Danilo-Oliveira/PostgresqlWithPython/blob/master/imagens/tela-inicial.png)
 
-### A seguir é necessario instalar algumas bibliotecas para o python, para fazer isso usaremos o "pip" onde o mesmo é instalado automaticamente no Windows. Abaixo veremos como instalamos para Linux, qualquer dúvida tem essa documentação do pip abaixo.
+### A seguir é necessario instalar algumas bibliotecas para o python, para fazer isso usaremos o "pip" onde o mesmo é instalado automaticamente no Windows. Abaixo veremos como instalamos para Linux, qualquer dúvida segue a documentação do pip abaixo.
 
 [Installation - pip documentation v21.2.2](https://pip.pypa.io/en/stable/installation/)
 
 Windows
 
-```powershell
+```
 pip install psycopg2 pandas tabule validate-email
+
 ```
 
 Linux
 
-```powershell
+```
 sudo apt install python3-pip
 pip3 install psycopg2 pandas tabule validate-email
+
 ```
 
 ---
 
-### Configure o seu banco de dados com as suas informações: user, password, host, post( 5432 é a padrão ) e database. Qualquer dúvida link abaixo terá a documentação do Postgresql.
+### Configure o seu banco de dados com as suas informações: user, password, host, post( 5432 é a padrão ) e database de sua preferência. Qualquer dúvida documentação do Postgresql abaixo.
 
-
-![alt text](https://github.com/Danilo-Oliveira/PostgresqlWithPython/blob/master/imagens/conexao.png)
+![https://github.com/Danilo-Oliveira/PostgresqlWithPython/blob/master/imagens/conexao.png](https://github.com/Danilo-Oliveira/PostgresqlWithPython/blob/master/imagens/conexao.png)
 
 ### Documentação do Postgresql
 
@@ -70,53 +71,51 @@ pip3 install psycopg2 pandas tabule validate-email
 
 ### Essa é a tela inicial quando o programa executa.
 
-![alt text](https://github.com/Danilo-Oliveira/PostgresqlWithPython/blob/master/imagens/executando.png)
+![https://github.com/Danilo-Oliveira/PostgresqlWithPython/blob/master/imagens/executando.png](https://github.com/Danilo-Oliveira/PostgresqlWithPython/blob/master/imagens/executando.png)
 
 ---
 
 ### Na opção 1° iremos cadastrar uma pessoa, nesse programa fiz algo simples, onde ele apenas pede o "Nome" e o "Email" do aluno.
 
-![alt text](https://github.com/Danilo-Oliveira/PostgresqlWithPython/blob/master/imagens/cadastrar.png)
+![https://github.com/Danilo-Oliveira/PostgresqlWithPython/blob/master/imagens/cadastrar.png](https://github.com/Danilo-Oliveira/PostgresqlWithPython/blob/master/imagens/cadastrar.png)
 
 ---
 
 ### Na opção 2° temos a escolha de editar nosso usuário.
 
-![alt text](https://github.com/Danilo-Oliveira/PostgresqlWithPython/blob/master/imagens/editar-1.png)
+![https://github.com/Danilo-Oliveira/PostgresqlWithPython/blob/master/imagens/editar-1.png](https://github.com/Danilo-Oliveira/PostgresqlWithPython/blob/master/imagens/editar-1.png)
 
 ### Selecionando "sim" podemos escolher entre 4 opções do queremos fazer.
 
-![alt text](https://github.com/Danilo-Oliveira/PostgresqlWithPython/blob/master/imagens/editar-2.png)
+![https://github.com/Danilo-Oliveira/PostgresqlWithPython/blob/master/imagens/editar-2.png](https://github.com/Danilo-Oliveira/PostgresqlWithPython/blob/master/imagens/editar-2.png)
 
 ---
 
 ### Na opção 3° podemos deletar os usuários.
 
-![alt text](https://github.com/Danilo-Oliveira/PostgresqlWithPython/blob/master/imagens/delete.png)
----
+## 
+
+![https://github.com/Danilo-Oliveira/PostgresqlWithPython/blob/master/imagens/delete.png](https://github.com/Danilo-Oliveira/PostgresqlWithPython/blob/master/imagens/delete.png)
 
 ### Na opção 4° listaremos apenas um usuário cadastrado no banco.
 
-![alt text](https://github.com/Danilo-Oliveira/PostgresqlWithPython/blob/master/imagens/mostrando-cadastrado.png)
-
+![https://github.com/Danilo-Oliveira/PostgresqlWithPython/blob/master/imagens/mostrando-cadastrado.png](https://github.com/Danilo-Oliveira/PostgresqlWithPython/blob/master/imagens/mostrando-cadastrado.png)
 
 ---
 
 ### Na opção 5° exibirá todos os usuários cadastrados
 
-![alt text](https://github.com/Danilo-Oliveira/PostgresqlWithPython/blob/master/imagens/todos.png)
+![https://github.com/Danilo-Oliveira/PostgresqlWithPython/blob/master/imagens/todos.png](https://github.com/Danilo-Oliveira/PostgresqlWithPython/blob/master/imagens/todos.png)
 
+
+# Assim terminando. Agradeço! [❤](#-funding-)
 ---
 
 <h3> :man: &nbsp;Sobre mim </h3>
 
 - 💼 &nbsp; Trabalhando como **Estágiario** na **Procurement Garage**
 
-<h3> :rocket: &nbsp;Minhas Skills </h3>
-
----
-
-### Frameworks e Linguagens
+### [💻 Meu Conhecimento](#-workspace-spec-)
 
   ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
   ![Pandas](https://img.shields.io/badge/Pandas-2C2D72?style=for-the-badge&logo=pandas&logoColor=white)
@@ -131,7 +130,7 @@ pip3 install psycopg2 pandas tabule validate-email
 
 ---
 
-### Repositório e versionamentos
+### [🚀 Repositório e versionamentos](#-frameworks-)
 
   ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
   ![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
@@ -140,14 +139,14 @@ pip3 install psycopg2 pandas tabule validate-email
 
 ---
 
-### Cloud
+### [☁ Cloud](#-cloud-)
 
   ![Google Cloud](https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)
   ![Microsoft Azure](https://img.shields.io/badge/microsoft%20azure-0089D6?style=for-the-badge&logo=microsoft-azure&logoColor=white)
 
 ---
 
-### Ferramentas de Desenvolvimento
+### [👩‍💻 Ferramentas de Desenvolvimento](#-ide-)
 
   ![Visual Studio Code](https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
   ![Notion](https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white)
@@ -157,19 +156,11 @@ pip3 install psycopg2 pandas tabule validate-email
 
 ---
 
-### Sistemas Operacionais
+### [💻 Sistemas Operacionais](#-os-)
   ![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
   ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 
 ---
-  
-<br/>
-
-<a href="https://github.com/Danilo-Oliveira">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=Danilo-Oliveira&theme=dracula&show_icons=true" />
-</a>
-
-<br/>
 
 <h3> :earth_americas: &nbsp;Onde me encontrar: </h3> 
 
