@@ -1,5 +1,3 @@
-# PostgresqlWithPython
-
 ---
 
 # Crud com Python e Postgresql
