@@ -108,7 +108,7 @@ pip3 install psycopg2 pandas tabule validate-email
 ![https://github.com/Danilo-Oliveira/PostgresqlWithPython/blob/master/imagens/todos.png](https://github.com/Danilo-Oliveira/PostgresqlWithPython/blob/master/imagens/todos.png)
 
 
-# Assim terminando. Agradeço! [❤](#-funding-)
+# Assim terminando nosso programa Crud com Python e Postgresql. Agradeço! [❤](#-funding-)
 ---
 
 <h3> :man: &nbsp;Sobre mim </h3>
